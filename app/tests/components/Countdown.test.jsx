@@ -34,5 +34,18 @@ describe('Countdown', ()=>{
         done(); //this asynchronous call will pass now
       },3001);
     });
+
+    it('should stop count when paused is triggered',(done)=>{
+      var countDown = TestUtils.renderIntoDocument(<Countdown/>);
+      countDown.handleCountDown(3);
+      countDown.handleStatusChange('paused');
+
+      setTimeout(()=>{
+        expect(countDown.state.count).toBe(3);
+        expect(countDown.state.countdownStatus).toBe('paused');
+        done();
+      },1001);
+
+    })
   });
 });
