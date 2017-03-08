@@ -9,8 +9,6 @@ var Main = React.createClass({
         <Navigation/>
         <div className="row">
           <div className="column small-centered medium-6 large-4">
-            <h3 className="text-center">Main.jsx rendered </h3>
-
               {this.props.children}
           </div>
 
